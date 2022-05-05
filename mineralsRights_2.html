@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mineral Rights</title>
+    <link rel="stylesheet" href="mineralRightsDetail.css">
+    <link href="https://fonts.googleapis.com/css2?family=Arimo&display=swap" rel="stylesheet" />
+    <!--FontAwesome Icon Kit Code-->
+    <script src="https://kit.fontawesome.com/c64968cdf0.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body onload="javascript:getProjectID()">
+    <div class="page-wrapper">
+        <!--Header-->
+        <div class="page-header-container">
+            <header class="page-header">
+                <button class="hamburger-toggle open">
+                    <span class="fas fa-bars" id="hamburger-toggle-open"></span>
+                </button>
+
+                <button class="logout-button" id="header-logout-button" data-visible="true">
+                    <a href="#" class="logout-link">
+                        Logout
+                    </a>
+                </button>
+            </header>
+        </div>
+        <!--Sidebar Navigation-->
+        <aside class="sidebar">
+            <div class="sidebar-content-container">
+                <div class="sidebar-header">
+                    <div class="logo-container">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" version="1.1"
+                            id="svg826" class="ellium-logo" width="50px" height="50px" viewBox="0 0 153 153">
+                            <defs id="defs830" />
+                            <path style="fill:#213760;fill-opacity:1;stroke-width:0"
+                                d="m 57.74208,133.94381 -18.45478,-18.4562 5.625452,-5.62089 c 3.094,-3.09149 5.743503,-5.61961 5.887783,-5.61806 0.14428,0.002 1.584452,1.40263 3.200382,3.11348 1.615929,1.71085 3.759054,3.7802 4.7625,4.59855 12.480975,9.01078 25.537336,12.54683 38.547813,9.79748 3.95482,-0.84674 7.91268,-2.20211 11.7486,-4.02331 1.78975,-0.84973 3.25408,-1.46384 3.25408,-1.3647 0,0.20443 -35.780592,36.02984 -35.984774,36.02984 -0.07275,0 -8.436928,-8.30528 -18.587056,-18.45619 z M 18.519262,94.720984 0,76.200305 12.963722,63.218529 C 20.09377,56.078552 28.398151,47.848957 31.417901,44.930542 l 5.490456,-5.306208 1.124127,0.930005 c 0.618271,0.511503 3.326583,3.067484 6.018472,5.679956 l 4.894345,4.749948 -1.911689,3.942773 c -2.758615,5.689526 -4.554876,11.512653 -4.909354,15.915172 l -0.111842,1.389062 h 46.265555 46.265569 l -0.16305,-1.521354 c -0.50347,-4.697822 -2.14393,-10.072394 -4.62501,-15.152753 -0.99351,-2.034345 -1.72217,-3.698809 -1.61925,-3.698809 0.10292,0 5.66304,5.476877 12.35581,12.170838 l 12.16869,12.170839 -12.2905,12.292629 c -6.75977,6.760945 -12.32851,12.25461 -12.37497,12.20815 -0.0465,-0.0465 0.55679,-1.335167 1.34055,-2.863784 2.27529,-4.82037 4.51932,-10.080064 4.98462,-15.419297 l 0.0862,-1.322917 -46.103654,-0.06689 c -38.922518,-0.05647 -46.103646,-0.01035 -46.103646,0.296071 0,0.199628 0.180356,1.420355 0.400791,2.712723 0.836223,4.902636 3.129584,11.364071 5.430549,15.300317 l 1.074452,1.838067 -6.033294,6.03329 -6.033294,6.03329 z M 45.158214,42.714535 C 41.132184,38.477873 39.838372,36.958403 40.004368,36.661784 40.413999,35.929814 75.843673,0 76.155823,0 76.436012,0 110.07974,33.574429 111.9252,35.695703 l 0.78559,0.902996 -2.51354,-1.323316 c -15.69509,-7.868082 -33.759119,-6.782547 -48.002457,2.480723 -1.964143,1.300808 -3.843531,2.935433 -7.144359,6.213895 -2.463501,2.446811 -4.487563,4.43806 -4.497917,4.424998 -0.01035,-0.01307 -2.437788,-2.569274 -5.394303,-5.680464 z"
+                                id="path824" />
+                        </svg>
+                    </div>
+                    <button class="hamburger-toggle close">
+                        <span class="fas fa-times" id="hamburger-toggle-close"></span>
+                    </button>
+                </div>
+                <!--Menu Options-->
+                <nav class="sidebar-nav" data-visible="false">
+                    <ul class="sidebar-nav-list">
+                        <li class="sidebar-nav-item">
+                            <a href="#" class="sidebar-nav-item-link">
+                                <div class="nav-item-container">
+                                    <span class="fas fa-user"></span>
+                                    <span class="nav-item-name">Profile</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="sidebar-nav-item">
+                            <a href="#" class="sidebar-nav-item-link">
+                                <div class="nav-item-container">
+                                    <span class="fas fa-user-gear"></span>
+                                    <span class="nav-item-name">Admin</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="sidebar-nav-item">
+                            <a href="#" class="sidebar-nav-item-link">
+                                <div class="nav-item-container">
+                                    <span class="fas fa-database"></span>
+                                    <span class="nav-item-name">Projects</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="sidebar-nav-item">
+                            <a href="#" class="sidebar-nav-item-link">
+                                <div class="nav-item-container">
+                                    <span class="fas fa-stream"></span>
+                                    <span class="nav-item-name">Reports</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="sidebar-nav-item" data-visible="false" id="sidebar-logout-item">
+                            <a href="#" class="sidebar-nav-item-link">
+                                <div class="nav-item-container">
+                                    <span class="fas fa-right-from-bracket"></span>
+                                    <span class="nav-item-name">Logout</span>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </aside>
+        <!--Main Content-->
+        <main class="page-content-section">
+            <div class="page-content-container">
+                <div class="add-record-window">
+                    <span class="add-record-header-text">Mineral Rights</span>
+                    <div class="add-record-header">
+                        <!--The IDs need to be implemented-->
+                        <div class="id-field">
+                            <label for="project-id-field">Project ID:</label>
+                            <p id="project-id-field" style="display:inline">3LL1UM</p>
+                        </div>
+
+                        <div class="button-field">
+                            <button class="well-button" id="button-bar-add">Add Row</button>
+                        </div>
+                    </div>
+                    <div class="table-field">
+                        <div class="table-wrapper">
+                            <table cellspacing=1 cellpadding=2 id="data_table" style="table-layout:auto;width: 100%">
+                                <tr>
+                                    <th class="table-column" style="width: 17%">Minerals Rights ID</th>
+                                    <th class="table-column" style="width: 17%">Project ID ID</th>
+                                    <th class="table-column" style="width: 17%">Mineral Owner</th>
+                                    <th class="table-column" style="width: 17%">Interest %</th>
+                                    <th class="table-column" style="width: 17%">Net Acres</th>
+                                    
+                                </tr>
+                                <tr id="row1">
+                                    <td id="mineralID_row1">d4a6yi</td>
+                                    <td id="projectID_row1">c18990</td>
+                                    <td id="mineralOwner_row1">3ll1um</td>
+                                    <td id="interest_row1">richardson</td>
+                                    <td id="netAcres_row1">6649</td>
+                                
+                                    <td class="action-column">
+                                        <input type="button" id="edit_button1" value="Edit" class="well-button"
+                                            onclick="edit_row('1')">
+                                        <input type="button" id="save_button1" value="Save" class="well-button"
+                                            onclick="save_row('1')" style="display:none;">
+                                        <input type="button" value="Delete" class="well-button"
+                                            onclick="delete_row('1')">
+                                    </td>
+                                </tr>
+
+                                <tr id="row2">
+                                    <td id="mineralID_row2">d4a6yi</td>
+                                    <td id="projectID_row2">c18990</td>
+                                    <td id="mineralOwner_row2">3ll1um</td>
+                                    <td id="interest_row2">richardson</td>
+                                    <td id="netAcres_row2">6649</td>
+                                    <!-- <td id="serialnumber_row1">1122</td>
+                                    <td id="name_row1">Richardson Well 1</td>
+                                    <td id="number_row1">1</td>
+                                    <td id="status_row1">good</td>
+                                    <td id="operator_row1">John Doe</td> -->
+                                    <td class="action-column">
+                                        <input type="button" id="edit_button2" value="Edit" class="well-button"
+                                            onclick="edit_row('2')">
+                                        <input type="button" id="save_button2" value="Save" class="well-button"
+                                            onclick="save_row('2')" style="display:none;">
+                                        <input type="button" value="Delete" class="well-button"
+                                            onclick="delete_row('2')">
+                                    </td>
+                                </tr>
+
+                                <tr id="row3">
+                                    <td id="mineralID_row3">d4a6yi</td>
+                                    <td id="projectID_row3">c18990</td>
+                                    <td id="mineralOwner_row3">3ll1um</td>
+                                    <td id="interest_row3">richardson</td>
+                                    <td id="netAcres_row3">6649</td>
+                                    
+                                    <td class="action-column">
+                                        <input type="button" id="edit_button3" value="Edit" class="well-button"
+                                            onclick="edit_row('3')">
+                                        <input type="button" id="save_button3" value="Save" class="well-button"
+                                            onclick="save_row('3')" style="display:none;">
+                                        <input type="button" value="Delete" class="well-button"
+                                            onclick="delete_row('3')">
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td class="add-row"><input type="text" class="add-row-input" id="new_mineralID"></td>
+                                    <td class="add-row"><input type="text" class="add-row-input" id="new_projectID">
+                                    </td>
+                                    <td class="add-row"><input type="text" class="add-row-input" id="new_mineralOwner">
+                                    </td>
+                                    <td class="add-row"><input type="text" class="add-row-input" id="new_interest">
+                                    </td>
+                                    <td class="add-row"><input type="text" class="add-row-input" id="new_netAcres">
+                                    </td>
+
+                                    <td class="action-column"><input type="button" class="well-button"
+                                            onclick="add_row();" value="Add"></td>
+                                </tr>
+
+                            </table>
+                        </div>
+                    </div>
+
+                    <div id="modal-add" class="modal">
+
+                        <!-- Modal content -->
+                        <div class="modal-content">
+                            <div>
+                                <span id="modal-add-close" class="close">&times;</span>
+                            </div>
+                            <div id="add-record-form">
+                                <h1 id="modal-add-header">Add New Row</h1>
+                                <div class="add-record-container">
+                                    
+                                    <!--Labels-->
+                                    <div class="add-field-labels">
+                                        <div class="add-field">
+                                            <label for="add-field-1">Mineral Rights ID</label>
+                                        </div>
+                                        <div class="add-field">
+                                            <label for="add-field-2">Project ID</label>
+                                        </div>
+                                        <div class="add-field">
+                                            <label for="add-field-3">Mineral Owner</label>
+                                        </div>
+                                        <div class="add-field">
+                                            <label for="add-field-4">Interest</label>
+                                        </div>
+                                        <div class="add-field">
+                                            <label for="add-field-5">Net Acres</label>
+                                        </div>
+                                       
+                                    </div>
+                                    <!--Inputs-->
+                                    <div class="add-field-container">
+                                        <div class="add-record-input-field">
+                                            <input type="text" id="add-field-1" class="add-record-input-field"
+                                                name="Field 1"> <br>
+                                        </div>
+                                        <div class="add-record-input-field">
+                                            <input type="text" id="add-field-2" class="add-record-input-field"
+                                                name="Field 2"> <br>
+                                        </div>
+                                        <div class="add-record-input-field">
+                                            <input type="text" id="add-field-3" class="add-record-input-field"
+                                                name="Field 3"> <br>
+                                        </div>
+                                        <div class="add-record-input-field">
+                                            <input type="text" id="add-field-4" class="add-record-input-field"
+                                                name="Field 4"> <br>
+                                        </div>
+                                        <div class="add-record-input-field">
+                                            <input type="text" id="add-field-5" class="add-record-input-field"
+                                                name="Field 5"> <br>
+                                        </div>
+                                      
+
+                                        <div class="button-container">
+                                            <button onclick="add_row_modal()" id="add-button">ADD</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="mineralRightsDetail.js" async></script>
+</body>
+
+</html>
